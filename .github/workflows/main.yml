@@ -15,6 +15,7 @@ jobs:
       - name: Install Dependencies
         run: 
           pip install -r project-1/requirements.txt
+          pip install pytest pytest-cov
 
   test:
     runs-on: ubuntu-latest
@@ -27,6 +28,6 @@ jobs:
 
       - name: test_script
         run: |
-          project-1/gspread_code.py
           project-1/test_gspread_code.py
+      - name: Check test Coverage
           python3 -m pytest --cov-report term --cov-report xml:coverage.xml --cov=project-1/gspread_code.py
