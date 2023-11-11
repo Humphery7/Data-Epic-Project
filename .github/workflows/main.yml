@@ -1,0 +1,32 @@
+name: continuous_integration
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+      
+      - name: Install Dependencies
+        run: 
+          pip install -r requirements.txt
+
+  test:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+      - name: Setup Python
+        uses: actions/setup-python@v4
+
+      - name: test_script
+        run: |
+          gspread_code.py
+          test_gspread_code.py
+          python3 -m pytest --cov-report term --cov-report xml:coverage.xml --cov=gspread_code.py
