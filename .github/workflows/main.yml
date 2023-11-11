@@ -30,4 +30,4 @@ jobs:
         run: |
           echo "$project-1/test_gspread_code.py" >> $GITHUB_PATH
       - name: Check test Coverage
-        run: pytest echo "$project-1/test_gspread_code.py" >> $GITHUB_PATH --cov-report term --cov-report xml:coverage.xml --cov=echo "$project-1/test_gspread_code.py" >> $GITHUB_PATH
+        run: pytest echo "$project-1/test_gspread_code.py" >> $GITHUB_PATH --cov-report term --cov-report xml:coverage.xml --cov=main
