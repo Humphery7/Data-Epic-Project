@@ -14,7 +14,7 @@ jobs:
       
       - name: Install Dependencies
         run: 
-          pip install -r project-1/requirements.txt
+          pip install -r requirements.txt
           pip install pytest pytest-cov
 
   test:
@@ -28,6 +28,6 @@ jobs:
 
       - name: test_script
         run: |
-          echo "$project-1/test_gspread_code.py" >> $GITHUB_PATH
+          test_gspread_code.py
       - name: Check test Coverage
-        run: pytest echo "$project-1/test_gspread_code.py" >> $GITHUB_PATH --cov-report term --cov-report xml:coverage.xml --cov=main
+        run: pytest test_gspread_code.py --cov-report term --cov-report xml:coverage.xml --cov=main
