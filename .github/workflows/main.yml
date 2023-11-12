@@ -26,8 +26,13 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v4
 
+      - name: Install Dependencies
+        run: 
+          pip install -r requirements.txt
+          pip install pytest pytest-cov
+
       - name: test_script
-        run: echo "test_gspread_code.py" >> $GITHUB_PATH
+        run: pytest test_gspread_code.py
 
       - name: Check test Coverage
         run: pytest test_gspread_code.py --cov-config=.coveragerc --cov=main
