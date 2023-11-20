@@ -3,3 +3,4 @@ gspread==5.11.3
 pandas==1.4.2
 pytest==7.1.1
 python-dotenv
+webdriver-manager==4.0.1 
