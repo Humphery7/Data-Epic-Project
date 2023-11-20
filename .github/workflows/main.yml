@@ -33,6 +33,8 @@ jobs:
 
       - name: test_script
         run: pytest
+      - name: code_coverage
+        run: pytest --cov
 
       # - name: Check test Coverage
       #   run: pytest test_gspread_code.py --cov-config=.coveragerc --cov=main
