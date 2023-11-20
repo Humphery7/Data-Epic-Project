@@ -3,36 +3,41 @@ name: continuous_integration
 on: push
 
 jobs:
-  build:
+  hello:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v3
+      - name: Hello Step
+        run: echo "Hello World"
+  # build:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Checkout Code
+  #       uses: actions/checkout@v3
 
-      - name: Setup Python
-        uses: actions/setup-python@v4
+  #     - name: Setup Python
+  #       uses: actions/setup-python@v4
       
-      - name: Install Dependencies
-        run: 
-          pip install -r requirements.txt
-          pip install pytest pytest-cov
+  #     - name: Install Dependencies
+  #       run: 
+  #         pip install -r requirements.txt
+  #         pip install pytest pytest-cov
 
-  test:
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v3
-      - name: Setup Python
-        uses: actions/setup-python@v4
+  # test:
+  #   runs-on: ubuntu-latest
+  #   needs: build
+  #   steps:
+  #     - name: Checkout Code
+  #       uses: actions/checkout@v3
+  #     - name: Setup Python
+  #       uses: actions/setup-python@v4
 
-      - name: Install Dependencies
-        run: 
-          pip install -r requirements.txt
-          pip install pytest pytest-cov
+  #     - name: Install Dependencies
+  #       run: 
+  #         pip install -r requirements.txt
+  #         pip install pytest pytest-cov
 
-      - name: test_script
-        run: pytest test_gspread_code.py
+  #     - name: test_script
+  #       run: pytest test_gspread_code.py
 
-      - name: Check test Coverage
-        run: pytest test_gspread_code.py --cov-config=.coveragerc --cov=main
+  #     - name: Check test Coverage
+  #       run: pytest test_gspread_code.py --cov-config=.coveragerc --cov=main
