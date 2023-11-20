@@ -31,9 +31,9 @@ github_url = "https://github.com/Humphery7?tab=repositories"
 # worksheet.clear() 
 
 options = webdriver.ChromeOptions()
-s = Service('chromedriver.exe')
+# s = Service('chromedriver.exe')
 #instantiate driver
-driver = webdriver.Chrome(service=s, options=options)
+driver = webdriver.Chrome(options=options)
 driver.set_window_size(1120,1000)
 # driver.get(github_url) 
 # #waiting for data to be available implicitly
