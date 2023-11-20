@@ -34,7 +34,7 @@ options = webdriver.ChromeOptions()
 options.add_argument("headless")
 # s = Service('chromedriver.exe')
 #instantiate driver
-driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
+driver = webdriver.Chrome(executable_path=ChromeDriverManager().install(), options=options)
 driver.set_window_size(1120,1000)
 # driver.get(github_url) 
 # #waiting for data to be available implicitly
