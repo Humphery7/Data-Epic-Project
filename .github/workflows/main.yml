@@ -35,7 +35,7 @@ jobs:
           poetry install
 
       - name: test_script
-        run: pytest
+        run: poetry run pytest
   
   coverage:
     runs-on: ubuntu-latest
@@ -54,4 +54,4 @@ jobs:
             poetry install
       
       - name: code_coverage
-        run: pytest --cov=gspread_code --cov=test_gspread_code 
+        run: poetry run pytest --cov=gspread_code --cov=test_gspread_code 
