@@ -33,7 +33,6 @@ jobs:
       - name: Install Dependencies
         run: 
           poetry install
-          pip install pytest pytest-cov
 
       - name: test_script
         run: pytest
@@ -53,7 +52,6 @@ jobs:
       - name: Install Dependencies
         run: | 
             poetry install
-            pip install pytest pytest-cov
       
       - name: code_coverage
         run: pytest --cov=gspread_code --cov=test_gspread_code 
