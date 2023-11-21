@@ -12,10 +12,13 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v4
       
+      - name: Install Poetry
+        run: 
+          pip install poetry
+      
       - name: Install Dependencies
         run: 
-          pip install -r requirements.txt
-          #pip install pytest pytest-cov
+          poetry install
 
   test:
     runs-on: ubuntu-latest
@@ -26,9 +29,13 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v4
 
+      - name: Install Poetry
+        run: 
+          pip install poetry
+      
       - name: Install Dependencies
         run: 
-          pip install -r requirements.txt
+          poetry install
           pip install pytest pytest-cov
 
       - name: test_script
@@ -43,14 +50,14 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v4
 
+      - name: Install Poetry
+        run: 
+          pip install poetry
+      
       - name: Install Dependencies
-        run: | 
-            pip install -r requirements.txt
+        run: 
+          poetry install
             pip install pytest pytest-cov
       
       - name: code_coverage
         run: pytest --cov=gspread_code --cov=test_gspread_code 
-
-
-      # - name: Check test Coverage
-      #   run: pytest test_gspread_code.py --cov-config=.coveragerc --cov=main
